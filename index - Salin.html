@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orientasi Masalah | Suhu dan Kalor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">🌡️</div>
+
+        <div>
+            <h2>Suhu dan</h2>
+            <h2 class="yellow">Kalor</h2>
+            <small>Belajar • Berpikir • Menyelidiki</small>
+        </div>
+    </div>
+
+
+    <nav class="menu">
+
+        <a href="#" class="menu-item">
+            <span>⌂</span>
+            <span>Beranda</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <span>❓</span>
+            <span>Petunjuk</span>
+        </a>
+
+
+        <div class="menu-title">
+            <span>🎯</span>
+            <span>Pertemuan 1</span>
+            <span class="arrow">⌄</span>
+        </div>
+
+        <a href="#" class="submenu active">
+            <span>🎯</span>
+            <span>Orientasi Masalah</span>
+        </a>
+
+        <a href="materi.html" class="submenu">
+            <span>📚</span>
+            <span>Materi</span>
+        </a>
+
+        <a href="simulasi.html" class="submenu">
+            <span>🔬</span>
+            <span>Simulasi</span>
+        </a>
+
+        <a href="lkpd.html" class="submenu">
+            <span>📋</span>
+            <span>E-LKPD 1</span>
+        </a>
+
+        <a href="latihan.html" class="submenu">
+            <span>✓</span>
+            <span>Latihan Soal</span>
+        </a>
+
+
+        <div class="menu-title">
+            <span>🎯</span>
+            <span>Pertemuan 2</span>
+            <span class="arrow">⌄</span>
+        </div>
+<div class="meeting-card">
+    <h2>Pertemuan 2</h2>
+
+    <p>
+        Kalor, Perubahan Wujud, dan Asas Black
+    </p>
+
+    <a href="index2.html" class="btn">
+        Mulai Pertemuan 2 →
+    </a>
+</div>
+
+        <div class="menu-title">
+            <span>🎯</span>
+            <span>Pertemuan 3</span>
+            <span class="arrow">⌄</span>
+        </div>
+<a href="index3.html" class="btn">
+        Mulai Pertemuan 3 →
+</a>
+    </nav>
+
+
+    <div class="sidebar-decoration">
+        🌡️
+        <br>
+        ❄️ 🔥
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="meeting">
+            Pertemuan 1
+        </div>
+
+        <h1>
+            Suhu, Skala Termometer, dan Pemuaian Zat
+        </h1>
+
+        <div class="school">
+            🎓 Fisika SMA
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+        <!-- JUDUL -->
+
+        <div class="page-title">
+
+            <div class="title-icon">
+                🔎
+            </div>
+
+            <h2>
+                Orientasi Masalah
+            </h2>
+
+        </div>
+
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+            <div class="bulb">
+                💡
+            </div>
+
+            <p>
+                <strong>Amati ketiga permasalahan berikut.</strong>
+                Identifikasi masalah yang terjadi dan buat dugaan awal
+                berdasarkan pengetahuan yang kamu miliki.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= KASUS ================= -->
+
+        <div class="case-container">
+
+
+            <!-- ================= KASUS 1 ================= -->
+
+            <div class="case-card">
+
+                <div class="case-label">
+                    🔥 Kasus 1
+                </div>
+
+                <h3>
+                    Pengukuran Suhu dengan Pirometer
+                </h3>
+
+
+                <div class="case-image">
+
+                    <img
+                        src="images/pirometer.jpg"
+                        alt="Teknisi menggunakan pirometer">
+
+                </div>
+
+
+                <p class="case-text">
+
+                    Seorang teknisi pabrik peleburan logam menggunakan
+                    pirometer untuk mengukur suhu logam cair di dalam
+                    tungku tanpa menyentuhnya.
+
+                    Namun, banyak debu di sekitar tungku sehingga
+                    hasil pembacaan pirometer menjadi kurang akurat.
+
+                </p>
+
+
+                <div class="question">
+
+                    <strong>
+                        ❓ Pertanyaan
+                    </strong>
+
+                    <p>
+                        Mengapa debu di sekitar tungku dapat memengaruhi
+                        hasil pengukuran pirometer?
+                    </p>
+
+                </div>
+
+
+                <label>
+                    ✏️ Dugaan Awal Saya:
+                </label>
+
+                <textarea
+                    id="jawaban1"
+                    placeholder="Tuliskan dugaanmu di sini..."></textarea>
+
+
+                <button
+                    class="save-btn"
+                    onclick="simpanJawaban(1)">
+                    💾 Simpan Dugaan
+                </button>
+
+                <span
+                    id="status1"
+                    class="status">
+                </span>
+
+            </div>
+
+
+
+            <!-- ================= KASUS 2 ================= -->
+
+            <div class="case-card">
+
+                <div class="case-label thermometer">
+                    🌡️ Kasus 2
+                </div>
+
+                <h3>
+                    Dua Termometer, Dua Skala
+                </h3>
+
+
+                <div class="case-image">
+
+                    <img
+                        src="images/termometer.jpg"
+                        alt="Dua termometer dengan skala berbeda">
+
+                </div>
+
+
+                <p class="case-text">
+
+                    Dua termometer, yaitu termometer X dan Y,
+                    digunakan untuk mengukur suhu suatu fluida.
+
+                    Kedua termometer memiliki titik tetap bawah
+                    dan titik tetap atas yang berbeda.
+
+                </p>
+
+
+                <div class="question">
+
+                    <strong>
+                        ❓ Pertanyaan
+                    </strong>
+
+                    <p>
+                        Jika angka yang ditunjukkan kedua termometer
+                        berbeda, apakah suhu fluida tersebut juga
+                        berbeda?
+
+                        Bagaimana cara menentukan hubungan kedua
+                        skala tersebut?
+                    </p>
+
+                </div>
+
+
+                <label>
+                    ✏️ Dugaan Awal Saya:
+                </label>
+
+                <textarea
+                    id="jawaban2"
+                    placeholder="Tuliskan dugaanmu di sini..."></textarea>
+
+
+                <button
+                    class="save-btn"
+                    onclick="simpanJawaban(2)">
+                    💾 Simpan Dugaan
+                </button>
+
+                <span
+                    id="status2"
+                    class="status">
+                </span>
+
+            </div>
+
+
+
+            <!-- ================= KASUS 3 ================= -->
+
+            <div class="case-card">
+
+                <div class="case-label metal">
+                    🔥 Kasus 3
+                </div>
+
+                <h3>
+                    Mengapa Logam Memuai?
+                </h3>
+
+
+                <div class="case-image">
+
+                    <img
+                        src="images/pemuaian-logam.jpg"
+                        alt="Tiga batang logam dipanaskan">
+
+                </div>
+
+
+                <p class="case-text">
+
+                    Tiga batang logam yaitu Aluminium, Besi, dan
+                    Tembaga memiliki panjang awal yang sama.
+
+                    Ketiganya dipanaskan dengan kenaikan suhu
+                    yang sama.
+
+                </p>
+
+
+                <div class="question">
+
+                    <strong>
+                        ❓ Pertanyaan
+                    </strong>
+
+                    <p>
+                        Apakah ketiga logam tersebut akan mengalami
+                        pertambahan panjang yang sama?
+
+                        Logam manakah yang diperkirakan mengalami
+                        pemuaian paling cepat? Mengapa?
+                    </p>
+
+                </div>
+
+
+                <label>
+                    ✏️ Dugaan Awal Saya:
+                </label>
+
+                <textarea
+                    id="jawaban3"
+                    placeholder="Tuliskan dugaanmu di sini..."></textarea>
+
+
+                <button
+                    class="save-btn"
+                    onclick="simpanJawaban(3)">
+                    💾 Simpan Dugaan
+                </button>
+
+                <span
+                    id="status3"
+                    class="status">
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= TEMUAN ================= -->
+
+        <section class="finding">
+
+            <div class="finding-icon">
+                🔎
+            </div>
+
+            <div>
+
+                <h2>
+                    Apa yang Harus Kamu Temukan?
+                </h2>
+
+                <p>
+                    Dari ketiga permasalahan di atas, cobalah mencari
+                    jawaban atas pertanyaan berikut:
+                </p>
+
+
+                <ol>
+
+                    <li>
+                        Mengapa pengukuran suhu menggunakan alat tertentu
+                        dapat mengalami ketidakakuratan?
+                    </li>
+
+                    <li>
+                        Bagaimana cara menghubungkan dua skala
+                        termometer yang berbeda?
+                    </li>
+
+                    <li>
+                        Mengapa setiap jenis logam dapat mengalami
+                        pemuaian yang berbeda?
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BUTTON ================= -->
+
+        <div class="action">
+
+            <button
+                onclick="mulaiPenyelidikan()">
+
+                ▶ Mulai Penyelidikan
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

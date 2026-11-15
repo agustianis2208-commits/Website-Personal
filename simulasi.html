@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulasi Pertemuan 1 - Suhu dan Kalor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="simulasi-container">
+
+    <!-- ==================================================
+         HEADER
+         ================================================== -->
+
+    <header class="simulasi-header">
+
+        <span class="badge">
+            PERTEMUAN 1
+        </span>
+
+        <h1>Laboratorium Virtual</h1>
+
+        <p>
+            Suhu, Skala Termometer, dan Pemuaian Zat
+        </p>
+
+        <p class="petunjuk">
+            Ubah parameter, jalankan simulasi, amati perubahan,
+            kemudian tuliskan kesimpulanmu.
+        </p>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         SIMULASI 1
+         ================================================== -->
+
+    <section class="simulasi-box">
+
+        <div class="nomor">
+            SIMULASI 1
+        </div>
+
+        <h2>🌡️ Skala Termometer & Kalibrasi</h2>
+
+        <p class="deskripsi">
+            Ubah suhu menggunakan slider dan amati perubahan
+            tinggi cairan serta pembacaan pada beberapa skala
+            termometer.
+        </p>
+
+
+        <!-- KONTROL -->
+
+        <div class="kontrol-grid">
+
+            <div class="kontrol-item">
+
+                <label>
+                    Suhu Celsius
+                </label>
+
+                <div class="slider-row">
+
+                    <input
+                        type="range"
+                        id="sliderSuhu"
+                        min="0"
+                        max="100"
+                        value="25"
+                    >
+
+                    <span id="nilaiSuhu">
+                        25 °C
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn-simulasi"
+                onclick="resetTermometer()">
+
+                ↻ Reset
+
+            </button>
+
+        </div>
+
+
+
+        <!-- AREA TERMOMETER -->
+
+        <div class="termometer-area">
+
+            <div class="termometer-wrapper">
+
+                <div class="skala">
+                    <span>100</span>
+                    <span>75</span>
+                    <span>50</span>
+                    <span>25</span>
+                    <span>0</span>
+                </div>
+
+                <div class="termometer">
+
+                    <div
+                        id="cairanTermometer"
+                        class="cairan-termometer">
+                    </div>
+
+                    <div class="bola-termometer"></div>
+
+                </div>
+
+            </div>
+
+            <div class="suhu-besar">
+                <span id="suhuBesar">
+                    25
+                </span>
+                <small>°C</small>
+            </div>
+
+        </div>
+
+
+
+        <!-- HASIL KONVERSI -->
+
+        <div class="hasil-grid">
+
+            <div class="hasil-card">
+
+                <span>
+                    Celsius
+                </span>
+
+                <strong id="hasilCelsius">
+                    25 °C
+                </strong>
+
+            </div>
+
+
+            <div class="hasil-card">
+
+                <span>
+                    Fahrenheit
+                </span>
+
+                <strong id="hasilFahrenheit">
+                    77 °F
+                </strong>
+
+            </div>
+
+
+            <div class="hasil-card">
+
+                <span>
+                    Reamur
+                </span>
+
+                <strong id="hasilReamur">
+                    20 °R
+                </strong>
+
+            </div>
+
+
+            <div class="hasil-card">
+
+                <span>
+                    Kelvin
+                </span>
+
+                <strong id="hasilKelvin">
+                    298.15 K
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PERTANYAAN -->
+
+        <div class="pertanyaan">
+
+            <h3>🔎 Pertanyaan Pengamatan</h3>
+
+            <p>
+                Apa yang terjadi pada pembacaan skala
+                ketika suhu dinaikkan?
+            </p>
+
+            <textarea
+                id="jawabanTermometer"
+                placeholder="Tuliskan hasil pengamatanmu...">
+            </textarea>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SIMULASI 2
+         ================================================== -->
+
+    <section class="simulasi-box">
+
+        <div class="nomor">
+            SIMULASI 2
+        </div>
+
+        <h2>📏 Pemuaian Panjang Logam</h2>
+
+        <p class="deskripsi">
+
+            Pilih jenis logam, tentukan panjang awal,
+            kemudian naikkan suhu. Amati perubahan panjang
+            batang logam.
+
+        </p>
+
+
+
+        <!-- KONTROL LOGAM -->
+
+        <div class="kontrol-grid tiga">
+
+            <div class="kontrol-item">
+
+                <label>
+                    Jenis Logam
+                </label>
+
+                <select id="jenisLogam">
+
+                    <option value="aluminium">
+                        Aluminium
+                    </option>
+
+                    <option value="tembaga">
+                        Tembaga
+                    </option>
+
+                    <option value="besi">
+                        Besi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="kontrol-item">
+
+                <label>
+                    Panjang Awal
+                </label>
+
+                <input
+                    type="number"
+                    id="panjangAwal"
+                    value="1"
+                    min="0.1"
+                    step="0.1"
+                >
+
+                <span class="satuan">
+                    meter
+                </span>
+
+            </div>
+
+
+            <div class="kontrol-item">
+
+                <label>
+                    Perubahan Suhu
+                </label>
+
+                <input
+                    type="range"
+                    id="sliderDeltaT"
+                    min="0"
+                    max="500"
+                    value="100"
+                >
+
+                <span id="nilaiDeltaT">
+                    100 °C
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUHU -->
+
+        <div class="suhu-logam">
+
+            <span>
+                Suhu dinaikkan:
+            </span>
+
+            <strong id="suhuLogam">
+                +100 °C
+            </strong>
+
+        </div>
+
+
+
+        <!-- VISUAL LOGAM -->
+
+        <div class="logam-area">
+
+            <div class="ujung-kiri"></div>
+
+            <div
+                id="batangLogam"
+                class="batang-logam">
+            </div>
+
+            <div class="ujung-kanan"></div>
+
+        </div>
+
+
+
+        <!-- HASIL -->
+
+        <div class="hasil-grid tiga">
+
+            <div class="hasil-card">
+
+                <span>
+                    Koefisien α
+                </span>
+
+                <strong id="hasilAlpha">
+                    2.40 × 10⁻⁵ /°C
+                </strong>
+
+            </div>
+
+
+            <div class="hasil-card">
+
+                <span>
+                    Pertambahan ΔL
+                </span>
+
+                <strong id="hasilDeltaL">
+                    0.002400 m
+                </strong>
+
+            </div>
+
+
+            <div class="hasil-card">
+
+                <span>
+                    Panjang Akhir
+                </span>
+
+                <strong id="hasilPanjangAkhir">
+                    1.002400 m
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RUMUS -->
+
+        <div class="rumus">
+
+            <strong>
+                ΔL = α × L₀ × ΔT
+            </strong>
+
+            <br>
+
+            <small>
+                Panjang akhir = L₀ + ΔL
+            </small>
+
+        </div>
+
+
+
+        <!-- PERTANYAAN -->
+
+        <div class="pertanyaan">
+
+            <h3>🔎 Pertanyaan Pengamatan</h3>
+
+            <p>
+                Logam mana yang mengalami pemuaian paling besar?
+                Jelaskan berdasarkan hasil simulasi.
+            </p>
+
+            <textarea
+                id="jawabanLogam"
+                placeholder="Tuliskan hasil pengamatanmu...">
+            </textarea>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SIMULASI 3
+         ================================================== -->
+
+    <section class="simulasi-card">
+
+    <h2>🌡️ Simulasi Gas Ideal</h2>
+
+    <p>
+        Amati gerak partikel gas ketika suhu dan volume diubah.
+    </p>
+
+    <div class="kontrol-gas">
+
+        <label>
+            Suhu:
+            <strong id="nilaiSuhuGas">300 K</strong>
+        </label>
+
+        <input
+            type="range"
+            id="sliderSuhuGas"
+            min="200"
+            max="600"
+            value="300"
+        >
+
+        <label>
+            Volume:
+            <strong id="nilaiVolumeGas">5 L</strong>
+        </label>
+
+        <input
+            type="range"
+            id="sliderVolumeGas"
+            min="2"
+            max="10"
+            value="5"
+        >
+
+    </div>
+
+
+    <!-- Wadah gas -->
+    <div class="area-gas">
+
+        <div id="wadahGas" class="wadah-gas">
+        </div>
+
+    </div>
+
+
+    <div class="hasil-gas">
+
+        <div>
+            <span>Tekanan</span>
+            <strong id="nilaiTekananGas">0 Pa</strong>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ==================================================
+         KESIMPULAN
+         ================================================== -->
+
+    <section class="kesimpulan-box">
+
+        <h2>📝 Kesimpulan Simulasi</h2>
+
+        <p>
+            Setelah melakukan ketiga simulasi, tuliskan
+            kesimpulan berdasarkan hasil pengamatanmu.
+        </p>
+
+        <textarea
+            id="kesimpulan"
+            rows="7"
+            placeholder="Tuliskan kesimpulanmu di sini...">
+        </textarea>
+
+        <br><br>
+
+        <button
+            class="btn-simpan"
+            onclick="simpanKesimpulan()">
+
+            💾 Simpan Kesimpulan
+
+        </button>
+
+    </section>
+
+
+
+    <!-- KEMBALI -->
+
+    <div class="kembali">
+
+        <a href="index.html">
+            ← Kembali ke Halaman Utama
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="simulasi.js"></script>
+
+</body>
+
+</html>

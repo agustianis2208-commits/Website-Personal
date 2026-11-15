@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulasi Pertemuan 2 | Kalor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <div class="atom">⚛</div>
+
+        <div>
+            <h2>Fisika Interaktif</h2>
+            <p>Belajar • Eksplorasi • Pahami</p>
+        </div>
+    </div>
+
+    <a href="materi2.html" class="home-btn">
+        ← Materi
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="meeting">
+        SIMULASI PERTEMUAN 2
+    </div>
+
+    <h1>
+        Kalorimeter Virtual<br>
+        & Grafik Kalor–Massa
+    </h1>
+
+    <p class="intro">
+        Lakukan penyelidikan secara interaktif untuk mengetahui
+        hubungan kalor jenis dengan perubahan suhu dan hubungan
+        kalor dengan massa zat saat melebur.
+    </p>
+
+</section>
+
+
+<main class="simulation-container">
+
+
+<!-- =================================================
+     SIMULASI 1
+================================================= -->
+
+<section class="simulation-card">
+
+    <div class="simulation-header">
+
+        <span class="simulation-number">
+            01
+        </span>
+
+        <div>
+            <h2>
+                Kalorimeter Virtual
+            </h2>
+
+            <p>
+                Selidiki hubungan massa, kalor jenis, kalor,
+                dan perubahan suhu.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="simulation-body">
+
+        <!-- PANEL KONTROL -->
+
+        <div class="control-panel">
+
+            <h3>⚙️ Atur Variabel</h3>
+
+            <label>
+                Massa air (kg)
+            </label>
+
+            <input
+                type="number"
+                id="massaAir"
+                value="1"
+                min="0.1"
+                max="5"
+                step="0.1"
+                oninput="hitungKalor()"
+            >
+
+
+            <label>
+                Kalor jenis (J/kg°C)
+            </label>
+
+            <input
+                type="number"
+                id="kalorJenis"
+                value="4200"
+                min="100"
+                step="100"
+                oninput="hitungKalor()"
+            >
+
+
+            <label>
+                Suhu awal (°C)
+            </label>
+
+            <input
+                type="number"
+                id="suhuAwal"
+                value="25"
+                min="0"
+                max="100"
+                oninput="hitungKalor()"
+            >
+
+
+            <label>
+                Suhu akhir (°C)
+            </label>
+
+            <input
+                type="number"
+                id="suhuAkhir"
+                value="50"
+                min="0"
+                max="100"
+                oninput="hitungKalor()"
+            >
+
+
+            <div class="formula-mini">
+
+                Q = m × c × ΔT
+
+            </div>
+
+        </div>
+
+
+        <!-- VISUAL KALORIMETER -->
+
+        <div class="calorimeter-area">
+
+            <div class="thermometer-visual">
+
+                <div class="thermometer-body">
+
+                    <div
+                        id="mercury"
+                        class="mercury">
+                    </div>
+
+                </div>
+
+                <div class="thermometer-bulb"></div>
+
+                <span class="temp-label">
+                    <span id="tempDisplay">
+                        50
+                    </span>°C
+                </span>
+
+            </div>
+
+
+            <div class="calorimeter">
+
+                <div class="calorimeter-lid"></div>
+
+                <div
+                    id="waterLevel"
+                    class="calorimeter-water">
+                </div>
+
+                <div class="particles">
+
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+                    <span>•</span>
+
+                </div>
+
+                <div class="calorimeter-label">
+                    AIR
+                </div>
+
+            </div>
+
+
+            <div class="heat-arrow">
+
+                🔥
+                <span>Kalor</span>
+                →
+                🌡️
+
+            </div>
+
+        </div>
+
+
+        <!-- HASIL -->
+
+        <div class="result-panel">
+
+            <h3>📊 Hasil Perhitungan</h3>
+
+            <div class="result-item">
+
+                <span>
+                    Perubahan suhu
+                </span>
+
+                <strong id="deltaT">
+                    25°C
+                </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <span>
+                    Kalor yang diperlukan
+                </span>
+
+                <strong id="hasilKalor">
+                    105.000 J
+                </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <span>
+                    Kalor dalam kJ
+                </span>
+
+                <strong id="hasilKJ">
+                    105 kJ
+                </strong>
+
+            </div>
+
+
+            <div
+                id="interpretasi"
+                class="interpretation">
+
+                Semakin besar kalor jenis, semakin besar kalor
+                yang diperlukan untuk menaikkan suhu zat.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SIMULASI 2
+================================================= -->
+
+<section class="simulation-card">
+
+    <div class="simulation-header">
+
+        <span class="simulation-number">
+            02
+        </span>
+
+        <div>
+
+            <h2>
+                Grafik Kalor terhadap Massa
+            </h2>
+
+            <p>
+                Analisis grafik Q–m dari lima zat yang sedang melebur.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="graph-simulation">
+
+        <div class="graph-wrapper">
+
+            <div class="big-graph">
+
+                <div class="y-axis">
+                    <span>Q (J)</span>
+                </div>
+
+                <div class="x-axis">
+                    <span>m (kg)</span>
+                </div>
+
+
+                <!-- GRID -->
+
+                <div class="grid-line g1"></div>
+                <div class="grid-line g2"></div>
+                <div class="grid-line g3"></div>
+                <div class="grid-line g4"></div>
+
+
+                <!-- LINES -->
+
+                <div
+                    class="graph-data line-zat1"
+                    onclick="pilihZat(1)">
+                </div>
+
+                <div
+                    class="graph-data line-zat2"
+                    onclick="pilihZat(2)">
+                </div>
+
+                <div
+                    class="graph-data line-zat3"
+                    onclick="pilihZat(3)">
+                </div>
+
+                <div
+                    class="graph-data line-zat4"
+                    onclick="pilihZat(4)">
+                </div>
+
+                <div
+                    class="graph-data line-zat5"
+                    onclick="pilihZat(5)">
+                </div>
+
+
+                <span class="label-zat1">
+                    Zat 1
+                </span>
+
+                <span class="label-zat2">
+                    Zat 2
+                </span>
+
+                <span class="label-zat3">
+                    Zat 3
+                </span>
+
+                <span class="label-zat4">
+                    Zat 4
+                </span>
+
+                <span class="label-zat5">
+                    Zat 5
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="graph-analysis">
+
+            <h3>
+                🔎 Pilih salah satu garis
+            </h3>
+
+            <p>
+                Klik garis pada grafik untuk mengetahui
+                besar kalor lebur zat tersebut.
+            </p>
+
+
+            <div class="selected-material">
+
+                <span>
+                    Zat yang dipilih
+                </span>
+
+                <strong id="zatDipilih">
+                    Belum dipilih
+                </strong>
+
+            </div>
+
+
+            <div class="selected-material">
+
+                <span>
+                    Kalor lebur
+                </span>
+
+                <strong id="kalorLebur">
+                    -
+                </strong>
+            </div>
+
+
+            <div class="selected-material">
+
+                <span>
+                    Gradien grafik
+                </span>
+
+                <strong id="gradien">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="question-analysis">
+
+                <h3>
+                    💭 Analisis
+                </h3>
+
+                <p>
+                    Zat dengan garis paling curam memiliki nilai
+                    kalor lebur yang paling besar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     HUBUNGKAN DENGAN LKPD
+================================================= -->
+
+<section class="activity-guide">
+
+    <h2>
+        📝 Hubungkan dengan E-LKPD 2
+    </h2>
+
+    <p>
+        Setelah melakukan simulasi, gunakan hasil pengamatan
+        untuk mengerjakan kegiatan pada E-LKPD 2.
+    </p>
+
+
+    <div class="activity-grid">
+
+        <div>
+
+            <div class="activity-icon">
+                🌡️
+            </div>
+
+            <h3>
+                Kegiatan 1
+            </h3>
+
+            <p>
+                Gunakan simulasi kalorimeter untuk menganalisis
+                kalor yang dilepas air hangat dan kalor yang
+                diperlukan es.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="activity-icon">
+                📈
+            </div>
+
+            <h3>
+                Kegiatan 2
+            </h3>
+
+            <p>
+                Amati grafik Q–m dan tentukan zat yang memiliki
+                kalor lebur paling besar.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="lkpd2.html"
+        class="lkpd-button">
+
+        Buka Aktivitas E-LKPD 2 →
+
+    </a>
+
+</section>
+
+
+<!-- NAVIGASI -->
+
+<div class="navigation">
+
+    <a href="materi2.html">
+        ← Materi
+    </a>
+
+    <a href="lkpd2.html">
+        E-LKPD 2 →
+    </a>
+
+</div>
+
+</main>
+
+
+<script>
+
+/* =================================================
+   SIMULASI KALORIMETER
+================================================= */
+
+function hitungKalor() {
+
+    const m =
+        parseFloat(document.getElementById("massaAir").value);
+
+    const c =
+        parseFloat(document.getElementById("kalorJenis").value);
+
+    const tAwal =
+        parseFloat(document.getElementById("suhuAwal").value);
+
+    const tAkhir =
+        parseFloat(document.getElementById("suhuAkhir").value);
+
+
+    if (
+        isNaN(m) ||
+        isNaN(c) ||
+        isNaN(tAwal) ||
+        isNaN(tAkhir)
+    ) {
+        return;
+    }
+
+
+    const deltaT = tAkhir - tAwal;
+
+    const Q = m * c * deltaT;
+
+    const QkJ = Q / 1000;
+
+
+    document.getElementById("deltaT").textContent =
+        deltaT.toFixed(1) + " °C";
+
+
+    document.getElementById("hasilKalor").textContent =
+        Q.toLocaleString("id-ID") + " J";
+
+
+    document.getElementById("hasilKJ").textContent =
+        QkJ.toFixed(2) + " kJ";
+
+
+    document.getElementById("tempDisplay").textContent =
+        tAkhir.toFixed(1);
+
+
+    /*
+     Mengubah tinggi air secara visual
+     berdasarkan massa.
+    */
+
+    let tinggi =
+        Math.min(85, 35 + (m * 10));
+
+    document.getElementById("waterLevel")
+        .style.height = tinggi + "%";
+
+
+    /*
+     Mengubah posisi cairan termometer
+     berdasarkan suhu.
+    */
+
+    let mercuryHeight =
+        Math.min(130, Math.max(15, tAkhir * 1.2));
+
+    document.getElementById("mercury")
+        .style.height = mercuryHeight + "px";
+
+
+    /*
+     Interpretasi
+    */
+
+    const interpretasi =
+        document.getElementById("interpretasi");
+
+    if (deltaT > 0) {
+
+        interpretasi.textContent =
+            "Zat menerima kalor. Semakin besar nilai c, semakin besar kalor yang diperlukan untuk menghasilkan kenaikan suhu yang sama.";
+
+    } else if (deltaT < 0) {
+
+        interpretasi.textContent =
+            "Suhu akhir lebih rendah daripada suhu awal sehingga perubahan suhu bernilai negatif.";
+
+    } else {
+
+        interpretasi.textContent =
+            "Tidak terjadi perubahan suhu sehingga ΔT = 0 dan kalor berdasarkan persamaan Q = mcΔT bernilai 0 J.";
+
+    }
+
+}
+
+
+/* =================================================
+   DATA GRAFIK Q-M
+================================================= */
+
+const dataZat = {
+
+    1: {
+        nama: "Zat 1",
+        L: 150000
+    },
+
+    2: {
+        nama: "Zat 2",
+        L: 220000
+    },
+
+    3: {
+        nama: "Zat 3",
+        L: 334000
+    },
+
+    4: {
+        nama: "Zat 4",
+        L: 180000
+    },
+
+    5: {
+        nama: "Zat 5",
+        L: 400000
+    }
+
+};
+
+
+function pilihZat(nomor) {
+
+    const data = dataZat[nomor];
+
+    document.getElementById("zatDipilih")
+        .textContent = data.nama;
+
+    document.getElementById("kalorLebur")
+        .textContent =
+        data.L.toLocaleString("id-ID") +
+        " J/kg";
+
+    document.getElementById("gradien")
+        .textContent =
+        data.L.toLocaleString("id-ID") +
+        " J/kg";
+
+}
+
+
+/* Jalankan perhitungan saat halaman dibuka */
+
+hitungKalor();
+
+</script>
+
+
+</body>
+</html>

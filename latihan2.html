@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kuis Pertemuan 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">E-LKPD FISIKA</div>
+
+    <nav>
+        <a href="index2.html">Orientasi</a>
+        <a href="materi2.html">Materi</a>
+        <a href="simulasi2.html">Simulasi</a>
+        <a href="lkpd2.html">LKPD</a>
+        <a href="latihan2.html" class="active">Kuis</a>
+    </nav>
+</header>
+
+
+<section class="quiz-hero">
+    <div>
+        <span class="badge">PERTEMUAN 2</span>
+
+        <h1>Kuis Interaktif</h1>
+
+        <p>
+            Kalor, Perubahan Wujud, dan Asas Black
+        </p>
+    </div>
+</section>
+
+
+<main class="quiz-container">
+
+    <div class="quiz-info">
+        <h2>Petunjuk Kuis</h2>
+
+        <p>
+            Pilih satu jawaban yang paling tepat untuk setiap soal.
+            Setelah selesai, klik tombol <strong>Periksa Jawaban</strong>
+            untuk melihat nilai dan hasil evaluasi.
+        </p>
+
+        <p>
+            <strong>Jumlah soal:</strong> 5
+        </p>
+    </div>
+
+
+    <form id="quizForm">
+
+        <!-- SOAL 1 -->
+        <div class="question">
+
+            <h3>
+                1. Sebuah benda bermassa 2 kg memiliki kalor jenis
+                500 J/kg°C. Jika suhunya naik 10°C, kalor yang diterima
+                benda adalah ...
+            </h3>
+
+            <label>
+                <input type="radio" name="q1" value="A">
+                A. 1.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="B">
+                B. 5.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="C">
+                C. 10.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="D">
+                D. 20.000 J
+            </label>
+
+        </div>
+
+
+        <!-- SOAL 2 -->
+        <div class="question">
+
+            <h3>
+                2. Ketika es mencair pada tekanan normal, suhu es
+                selama proses pencairan ...
+            </h3>
+
+            <label>
+                <input type="radio" name="q2" value="A">
+                A. terus meningkat
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="B">
+                B. tetap sampai seluruh es mencair
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="C">
+                C. terus menurun
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="D">
+                D. berubah secara acak
+            </label>
+
+        </div>
+
+
+        <!-- SOAL 3 -->
+        <div class="question">
+
+            <h3>
+                3. Sebanyak 0,5 kg es melebur seluruhnya.
+                Jika kalor lebur es adalah 334.000 J/kg,
+                kalor yang diperlukan adalah ...
+            </h3>
+
+            <label>
+                <input type="radio" name="q3" value="A">
+                A. 167.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="B">
+                B. 334.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="C">
+                C. 668.000 J
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="D">
+                D. 1.000.000 J
+            </label>
+
+        </div>
+
+
+        <!-- SOAL 4 -->
+        <div class="question">
+
+            <h3>
+                4. Menurut Asas Black, ketika dua benda dengan suhu
+                berbeda dicampurkan dalam sistem terisolasi, maka ...
+            </h3>
+
+            <label>
+                <input type="radio" name="q4" value="A">
+                A. kalor hanya berpindah dari benda dingin ke benda panas
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="B">
+                B. jumlah kalor yang dilepas sama dengan jumlah kalor yang diterima
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="C">
+                C. benda panas selalu kehilangan seluruh kalor
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="D">
+                D. suhu benda tidak akan pernah mencapai keseimbangan
+            </label>
+
+        </div>
+
+
+        <!-- SOAL 5 -->
+        <div class="question">
+
+            <h3>
+                5. Air bermassa 0,2 kg dengan suhu 80°C dicampurkan
+                dengan air bermassa 0,2 kg bersuhu 20°C.
+                Jika tidak ada kalor yang hilang ke lingkungan,
+                suhu akhir campuran adalah ...
+            </h3>
+
+            <label>
+                <input type="radio" name="q5" value="A">
+                A. 30°C
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="B">
+                B. 40°C
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="C">
+                C. 50°C
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="D">
+                D. 60°C
+            </label>
+
+        </div>
+
+
+        <button type="button" onclick="periksaKuis()" class="quiz-button">
+            Periksa Jawaban
+        </button>
+
+    </form>
+
+
+    <!-- HASIL -->
+    <div id="hasilKuis" class="hasil-kuis"></div>
+
+</main>
+
+
+<footer>
+    <p>
+        E-LKPD Fisika | Kalor, Perubahan Wujud, dan Asas Black
+    </p>
+</footer>
+
+
+<script src="latihan2.js"></script>
+
+</body>
+</html>

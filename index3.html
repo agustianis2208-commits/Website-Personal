@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pertemuan 3 - Perpindahan Kalor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="logo">
+        <div class="atom">⚛</div>
+
+        <div>
+            <h2>Fisika Interaktif</h2>
+            <p>Belajar • Eksplorasi • Pahami</p>
+        </div>
+    </div>
+
+<header class="navbar">
+    <div class="logo">
+        🔥 FISIKA SUHU & KALOR
+    </div>
+
+    <nav>
+        <a href="index.html">Pertemuan 1</a>
+        <a href="index2.html">Pertemuan 2</a>
+        <a href="index3.html" class="active">Pertemuan 3</a>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+    <div class="hero-content">
+
+        <span class="badge">
+            PERTEMUAN 3
+        </span>
+
+        <h1>
+            Perpindahan Kalor
+        </h1>
+
+        <p>
+            Konduksi • Konveksi • Radiasi
+        </p>
+
+        <p class="hero-description">
+            Amati berbagai peristiwa perpindahan kalor dalam kehidupan
+            sehari-hari, kemudian temukan bagaimana kalor berpindah dari
+            satu tempat ke tempat lainnya.
+        </p>
+
+        <a href="#orientasi" class="btn">
+            Mulai Orientasi Masalah →
+        </a>
+
+    </div>
+</section>
+
+
+<!-- INFORMASI -->
+
+<section class="info-section">
+
+    <div class="info-card">
+        <div class="icon">🔬</div>
+
+        <h3>Materi</h3>
+
+        <p>
+            Konduksi, konveksi, dan radiasi serta faktor-faktor
+            yang memengaruhi perpindahan kalor.
+        </p>
+    </div>
+
+
+    <div class="info-card">
+        <div class="icon">💡</div>
+
+        <h3>Simulasi</h3>
+
+        <p>
+            Gunakan simulasi interaktif untuk mengamati
+            perpindahan kalor dan sambungan batang logam.
+        </p>
+    </div>
+
+
+    <div class="info-card">
+        <div class="icon">📝</div>
+
+        <h3>E-LKPD 3</h3>
+
+        <p>
+            Lakukan penyelidikan dan analisis berdasarkan
+            masalah yang diberikan.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- ORIENTASI MASALAH -->
+
+<section id="orientasi" class="section">
+
+    <div class="section-title">
+
+        <span class="section-number">
+            FASE 1
+        </span>
+
+        <h2>
+            Orientasi Peserta Didik pada Masalah
+        </h2>
+
+        <p>
+            Perhatikan ketiga peristiwa berikut. Apakah kalian dapat
+            menjelaskan bagaimana kalor berpindah pada setiap peristiwa?
+        </p>
+
+    </div>
+
+
+    <!-- MASALAH 1 -->
+
+    <div class="problem-card">
+
+        <div class="problem-image">
+            <div class="big-icon">🍳</div>
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                MASALAH 1 — KONDUKSI
+            </span>
+
+            <h3>
+                Mengapa Gagang Panci Bisa Menjadi Panas?
+            </h3>
+
+            <p>
+                Seorang siswa sedang membantu memasak menggunakan panci
+                berbahan logam. Setelah beberapa menit, bagian gagang panci
+                yang tidak terkena api ternyata ikut terasa panas.
+            </p>
+
+            <p>
+                Padahal api hanya mengenai bagian bawah panci.
+                Bagaimana panas dapat sampai ke gagang?
+            </p>
+
+            <div class="question-box">
+
+                <strong>💭 Pertanyaan Pemantik</strong>
+
+                <p>
+                    Bagaimana kalor berpindah melalui panci dan faktor apa
+                    yang menentukan cepat atau lambatnya perpindahan kalor?
+                </p>
+
+            </div>
+
+            <textarea
+                id="jawaban1"
+                placeholder="Tuliskan dugaan awal kelompok kalian..."
+            ></textarea>
+
+            <button onclick="simpanJawaban(1)" class="btn-small">
+                Simpan Dugaan
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MASALAH 2 -->
+
+    <div class="problem-card reverse">
+
+        <div class="problem-image">
+            <div class="big-icon">♨️</div>
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                MASALAH 2 — KONVEKSI
+            </span>
+
+            <h3>
+                Mengapa Air yang Dipanaskan Dapat Bergerak?
+            </h3>
+
+            <p>
+                Ketika air dipanaskan dari bagian bawah wadah, air di dekat
+                sumber panas menjadi lebih hangat dan bergerak. Air yang lebih
+                dingin kemudian bergerak menggantikannya.
+            </p>
+
+            <p>
+                Peristiwa tersebut menyebabkan terjadinya perpindahan kalor
+                di dalam air.
+            </p>
+
+            <div class="question-box">
+
+                <strong>💭 Pertanyaan Pemantik</strong>
+
+                <p>
+                    Mengapa air dapat bergerak ketika dipanaskan?
+                    Bagaimana gerakan tersebut membantu perpindahan kalor?
+                </p>
+
+            </div>
+
+            <textarea
+                id="jawaban2"
+                placeholder="Tuliskan dugaan awal kelompok kalian..."
+            ></textarea>
+
+            <button onclick="simpanJawaban(2)" class="btn-small">
+                Simpan Dugaan
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MASALAH 3 -->
+
+    <div class="problem-card">
+
+        <div class="problem-image">
+            <div class="big-icon">☀️</div>
+        </div>
+
+        <div class="problem-content">
+
+            <span class="problem-label">
+                MASALAH 3 — RADIASI
+            </span>
+
+            <h3>
+                Bagaimana Panas Matahari Sampai ke Bumi?
+            </h3>
+
+            <p>
+                Matahari berada sangat jauh dari Bumi. Di antara Matahari
+                dan Bumi terdapat ruang yang hampir tidak memiliki materi.
+                Namun, panas dari Matahari tetap dapat kita rasakan.
+            </p>
+
+            <p>
+                Berbeda dengan konduksi dan konveksi, perpindahan kalor
+                pada peristiwa ini tidak membutuhkan medium material.
+            </p>
+
+            <div class="question-box">
+
+                <strong>💭 Pertanyaan Pemantik</strong>
+
+                <p>
+                    Bagaimana energi panas Matahari dapat sampai ke Bumi
+                    tanpa berpindah melalui zat padat, cair, atau gas?
+                </p>
+
+            </div>
+
+            <textarea
+                id="jawaban3"
+                placeholder="Tuliskan dugaan awal kelompok kalian..."
+            ></textarea>
+
+            <button onclick="simpanJawaban(3)" class="btn-small">
+                Simpan Dugaan
+            </button>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- TANTANGAN -->
+
+<section class="challenge">
+
+    <div class="challenge-content">
+
+        <span class="badge">
+            🔎 TANTANGAN PENYELIDIKAN
+        </span>
+
+        <h2>
+            Apakah ketiga peristiwa tersebut
+            memiliki cara perpindahan kalor yang sama?
+        </h2>
+
+        <p>
+            Gunakan materi dan simulasi pada website untuk membuktikan
+            dugaan kalian. Temukan perbedaan antara konduksi, konveksi,
+            dan radiasi berdasarkan hasil penyelidikan.
+        </p>
+
+        <button onclick="mulaiPenyelidikan()" class="btn">
+            Mulai Penyelidikan →
+        </button>
+
+        <p id="statusPenyelidikan"></p>
+
+    </div>
+
+</section>
+
+
+<!-- NAVIGASI -->
+
+<section class="navigation">
+
+    <a href="materi3.html" class="nav-card">
+
+        <span>📚</span>
+
+        <div>
+            <small>Selanjutnya</small>
+
+            <h3>
+                Pelajari Materi →
+            </h3>
+        </div>
+
+    </a>
+
+</section>
+
+
+<footer>
+    <p>
+        Website Pembelajaran Fisika — Suhu dan Kalor
+    </p>
+
+    <p>
+        Pertemuan 3 | Konduksi • Konveksi • Radiasi
+    </p>
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+function simpanJawaban(nomor) {
+
+    const jawaban =
+        document.getElementById("jawaban" + nomor).value;
+
+    if (jawaban.trim() === "") {
+
+        alert("Silakan tuliskan dugaan terlebih dahulu.");
+
+        return;
+    }
+
+    localStorage.setItem(
+        "dugaanP3Kasus" + nomor,
+        jawaban
+    );
+
+    alert("Dugaan berhasil disimpan.");
+
+}
+
+
+function mulaiPenyelidikan() {
+
+    const j1 =
+        document.getElementById("jawaban1").value.trim();
+
+    const j2 =
+        document.getElementById("jawaban2").value.trim();
+
+    const j3 =
+        document.getElementById("jawaban3").value.trim();
+
+
+    if (j1 === "" || j2 === "" || j3 === "") {
+
+        document.getElementById(
+            "statusPenyelidikan"
+        ).innerHTML =
+            "⚠️ Lengkapi dugaan untuk ketiga masalah terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    localStorage.setItem("dugaanP3Kasus1", j1);
+    localStorage.setItem("dugaanP3Kasus2", j2);
+    localStorage.setItem("dugaanP3Kasus3", j3);
+
+    document.getElementById(
+        "statusPenyelidikan"
+    ).innerHTML =
+        "✅ Dugaan tersimpan. Silakan lanjut ke materi.";
+
+    setTimeout(function () {
+
+        window.location.href = "materi3.html";
+
+    }, 1000);
+
+}
+
+</script>
+
+</body>
+</html>

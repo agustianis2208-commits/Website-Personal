@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulasi 3 - Perpindahan Kalor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🔥 FISIKA SUHU & KALOR
+    </div>
+
+    <nav>
+        <a href="index.html">Pertemuan 1</a>
+        <a href="index2.html">Pertemuan 2</a>
+        <a href="index3.html" class="active">
+            Pertemuan 3
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            SIMULASI PERTEMUAN 3
+        </span>
+
+        <h1>
+            Eksplorasi Perpindahan Kalor
+        </h1>
+
+        <p>
+            Konduksi • Konveksi • Radiasi
+        </p>
+
+        <p class="hero-description">
+            Ubah parameter simulasi dan amati bagaimana kalor
+            berpindah melalui batang logam serta bagaimana arus
+            konveksi terbentuk pada fluida.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SIMULASI 1
+========================================== -->
+
+<section class="simulation-section">
+
+    <div class="simulation-header">
+
+        <span class="simulation-number">
+            SIMULASI 1
+        </span>
+
+        <h2>
+            🔩 Konduksi Batang Logam Bersambung
+        </h2>
+
+        <p>
+            Amati perpindahan kalor melalui dua batang logam
+            yang memiliki konduktivitas termal berbeda.
+        </p>
+
+    </div>
+
+
+    <div class="simulation-card">
+
+        <!-- KONTROL -->
+
+        <div class="control-panel">
+
+            <h3>
+                ⚙️ Pengaturan
+            </h3>
+
+
+            <label>
+                Logam 1
+            </label>
+
+            <select id="logam1">
+
+                <option value="aluminium">
+                    Aluminium
+                </option>
+
+                <option value="tembaga">
+                    Tembaga
+                </option>
+
+                <option value="besi">
+                    Besi
+                </option>
+
+            </select>
+
+
+            <label>
+                Logam 2
+            </label>
+
+            <select id="logam2">
+
+                <option value="tembaga">
+                    Tembaga
+                </option>
+
+                <option value="aluminium">
+                    Aluminium
+                </option>
+
+                <option value="besi">
+                    Besi
+                </option>
+
+            </select>
+
+
+            <label>
+                Suhu Sisi Panas:
+                <span id="suhuPanasValue">
+                    100
+                </span>
+                °C
+            </label>
+
+            <input
+                type="range"
+                id="suhuPanas"
+                min="50"
+                max="200"
+                value="100"
+            >
+
+
+            <label>
+                Suhu Sisi Dingin:
+                <span id="suhuDinginValue">
+                    20
+                </span>
+                °C
+            </label>
+
+            <input
+                type="range"
+                id="suhuDingin"
+                min="0"
+                max="50"
+                value="20"
+            >
+
+
+            <label>
+                Panjang Batang 1:
+                <span id="panjang1Value">
+                    1
+                </span>
+                m
+            </label>
+
+            <input
+                type="range"
+                id="panjang1"
+                min="0.5"
+                max="2"
+                step="0.1"
+                value="1"
+            >
+
+
+            <label>
+                Panjang Batang 2:
+                <span id="panjang2Value">
+                    1
+                </span>
+                m
+            </label>
+
+            <input
+                type="range"
+                id="panjang2"
+                min="0.5"
+                max="2"
+                step="0.1"
+                value="1"
+            >
+
+            <button
+                onclick="jalankanKonduksi()"
+                class="simulation-btn">
+
+                ▶ Jalankan Simulasi
+
+            </button>
+
+        </div>
+
+
+        <!-- VISUAL -->
+
+        <div class="simulation-visual">
+
+            <div class="temperature-label hot">
+                🔥
+                <span id="suhuPanasVisual">
+                    100°C
+                </span>
+            </div>
+
+
+            <div class="rod-container">
+
+                <div
+                    id="batang1"
+                    class="metal-rod rod1">
+
+                    <span id="namaLogam1">
+                        Aluminium
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="sambungan"
+                    class="junction">
+
+                    <span>
+                        T
+                    </span>
+
+                    <small id="suhuSambungan">
+                        60°C
+                    </small>
+
+                </div>
+
+
+                <div
+                    id="batang2"
+                    class="metal-rod rod2">
+
+                    <span id="namaLogam2">
+                        Tembaga
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="temperature-label cold">
+
+                ❄️
+                <span id="suhuDinginVisual">
+                    20°C
+                </span>
+
+            </div>
+
+
+            <!-- PARTIKEL KALOR -->
+
+            <div
+                id="heatParticles"
+                class="heat-particles">
+            </div>
+
+
+            <div class="direction">
+
+                🔥
+                <span>
+                    Arah perpindahan kalor
+                </span>
+                ❄️
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HASIL -->
+
+    <div class="result-card">
+
+        <h3>
+            📊 Hasil Simulasi
+        </h3>
+
+        <div class="result-grid">
+
+            <div>
+                <span>
+                    Konduktivitas Logam 1
+                </span>
+
+                <strong id="k1">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Konduktivitas Logam 2
+                </span>
+
+                <strong id="k2">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Suhu Titik Sambungan
+                </span>
+
+                <strong id="hasilSuhu">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Perbedaan Suhu
+                </span>
+
+                <strong id="deltaT">
+                    -
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div
+            id="interpretasi"
+            class="interpretation">
+
+            Jalankan simulasi untuk melihat hasil.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     SIMULASI 2
+========================================== -->
+
+<section class="simulation-section">
+
+    <div class="simulation-header">
+
+        <span class="simulation-number">
+            SIMULASI 2
+        </span>
+
+        <h2>
+            🌊 Arus Konveksi pada Air
+        </h2>
+
+        <p>
+            Amati bagaimana perbedaan suhu menyebabkan
+            gerakan fluida dan membentuk arus konveksi.
+        </p>
+
+    </div>
+
+
+    <div class="convection-card">
+
+
+        <div class="convection-control">
+
+            <label>
+                Suhu Pemanas:
+
+                <span id="suhuAirValue">
+                    80
+                </span>
+                °C
+
+            </label>
+
+
+            <input
+                type="range"
+                id="suhuAir"
+                min="30"
+                max="100"
+                value="80"
+                oninput="updateKonveksi()"
+            >
+
+
+            <button
+                onclick="mulaiKonveksi()"
+                class="simulation-btn">
+
+                ▶ Mulai Konveksi
+
+            </button>
+
+
+            <button
+                onclick="stopKonveksi()"
+                class="stop-btn">
+
+                ■ Berhenti
+
+            </button>
+
+        </div>
+
+
+        <div class="water-container">
+
+            <div class="water">
+
+                <div
+                    id="arus1"
+                    class="current current1">
+                </div>
+
+                <div
+                    id="arus2"
+                    class="current current2">
+                </div>
+
+                <div
+                    id="arus3"
+                    class="current current3">
+                </div>
+
+                <div
+                    id="arus4"
+                    class="current current4">
+                </div>
+
+            </div>
+
+
+            <div class="heater">
+                🔥
+            </div>
+
+        </div>
+
+
+        <div class="convection-info">
+
+            <div>
+
+                <strong>
+                    Suhu Pemanas
+                </strong>
+
+                <span id="infoSuhuAir">
+                    80°C
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Proses
+                </strong>
+
+                <span>
+                    Arus konveksi
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     AKTIVITAS
+========================================== -->
+
+<section class="activity-section">
+
+    <div class="activity-card">
+
+        <h2>
+            🔎 Apa yang Kamu Amati?
+        </h2>
+
+        <p>
+            Setelah menjalankan simulasi, gunakan hasil pengamatan
+            untuk menjawab pertanyaan pada E-LKPD 3.
+        </p>
+
+        <ol>
+
+            <li>
+                Bagaimana arah perpindahan kalor pada batang logam?
+            </li>
+
+            <li>
+                Apa yang terjadi pada suhu titik sambungan ketika
+                konduktivitas logam diubah?
+            </li>
+
+            <li>
+                Mengapa air mengalami gerakan ketika dipanaskan?
+            </li>
+
+            <li>
+                Apa perbedaan mekanisme konduksi dan konveksi?
+            </li>
+
+        </ol>
+
+
+        <a
+            href="lkpd3.html"
+            class="btn">
+
+            Lanjut ke E-LKPD 3 →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- NAVIGASI -->
+
+<section class="navigation">
+
+    <a
+        href="materi3.html"
+        class="nav-card">
+
+        <span>
+            ←
+        </span>
+
+        <div>
+
+            <small>
+                Kembali
+            </small>
+
+            <h3>
+                Materi Perpindahan Kalor
+            </h3>
+
+        </div>
+
+    </a>
+
+
+    <a
+        href="lkpd3.html"
+        class="nav-card">
+
+        <span>
+            📝
+        </span>
+
+        <div>
+
+            <small>
+                Selanjutnya
+            </small>
+
+            <h3>
+                E-LKPD 3 →
+            </h3>
+
+        </div>
+
+    </a>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        Website Pembelajaran Fisika — Suhu dan Kalor
+    </p>
+
+    <p>
+        Pertemuan 3 | Perpindahan Kalor
+    </p>
+
+</footer>
+
+
+<script src="simulasi3.js"></script>
+
+</body>
+
+</html>
